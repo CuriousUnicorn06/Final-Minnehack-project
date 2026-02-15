@@ -35,7 +35,7 @@ void setup() {
   while (WiFi.status() != WL_CONNECTED) {
     delay(300);              // ✅ prevents watchdog resets
     Serial.print(".");
-    if (millis() - start > 20000) {   // 20s timeout so it doesn't hang forever
+    if (millis() - start > 40000) {   // 20s timeout so it doesn't hang forever
       Serial.println("\nWiFi failed. Rebooting...");
       ESP.restart();
     }
