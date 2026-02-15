@@ -35,10 +35,12 @@ void setup() {
   while (WiFi.status() != WL_CONNECTED) {
     delay(300);              // ✅ prevents watchdog resets
     Serial.print(".");
-    if (millis() - start > 40000) {   // 20s timeout so it doesn't hang forever
-      Serial.println("\nWiFi failed. Rebooting...");
-      ESP.restart();
-    }
+    if (millis() - start > 60000) {
+  Serial.println("\nWiFi failed.");
+  Serial.print("WiFi.status() = "); Serial.println(WiFi.status());
+  Serial.print("RSSI = "); Serial.println(WiFi.RSSI());
+  break;  // stop reboot loop so you can read info
+}
   }
 
   Serial.println("\nConnected!");
