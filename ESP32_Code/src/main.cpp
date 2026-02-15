@@ -18,7 +18,7 @@ const char htmlPage[] PROGMEM = R"rawliteral(
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #ffe4ec;
+      background: #ffc3d5;
       color:#111;
       display:flex;
       min-height:100vh;
