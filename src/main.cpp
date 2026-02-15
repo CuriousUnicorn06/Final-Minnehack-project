@@ -35,7 +35,7 @@ void setup() {
   while (WiFi.status() != WL_CONNECTED) {
     delay(300);              // ✅ prevents watchdog resets
     Serial.print(".");
-    if (millis() - start > 60000) {
+    if (millis() - start > 30000) {
   Serial.println("\nWiFi failed.");
   Serial.print("WiFi.status() = "); Serial.println(WiFi.status());
   Serial.print("RSSI = "); Serial.println(WiFi.RSSI());
