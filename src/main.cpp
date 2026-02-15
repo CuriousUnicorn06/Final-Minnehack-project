@@ -159,6 +159,7 @@ void setup() {
   Serial.println(WiFi.localIP());
   server.on("/", handleRoot);
   server.on("/submit", handleSubmit);
+  server.begin();
   
 }
 
