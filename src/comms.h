@@ -5,6 +5,10 @@
 #include <WiFiUdp.h>
 #include "state.h"  // Make sure this includes personB_done and LED pin
 
+#ifndef LED_PIN
+#define LED_PIN 7  // Define LED_PIN if not already defined in state.h
+#endif
+
 WiFiUDP udp;
 const unsigned int localUdpPort = 4210;         // Port to listen on
 const char* photonIP = "192.168.1.123";         // Replace with your Photon’s IP
