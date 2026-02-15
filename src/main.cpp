@@ -157,7 +157,11 @@ void setup() {
 
   Serial.println("\nConnected");
   Serial.println(WiFi.localIP());
-
+  server.on("/", handleRoot);
+  server.on("/submit", handleSubmit);
+   server.on("/check", []() {
+    server.send(200, "text/plain", "ESP32 is alive!");
+  });
   ArduinoOTA.begin();
 }
 
