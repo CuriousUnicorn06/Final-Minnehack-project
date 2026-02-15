@@ -2,8 +2,8 @@
 #include <WebServer.h>
 
 // ---- CHANGE THESE ----
-const char* ssid = "YOUR_WIFI_NAME";
-const char* password = "YOUR_WIFI_PASSWORD";
+const char* ssid = "alaynas iPhone";
+const char* password = "abcdefghij";
 
 // ---- PINS ----
 const int LED_PIN = 2;      // Built‑in LED on many ESP32 boards
