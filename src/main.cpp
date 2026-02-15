@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WebServer.h>
+#include <ArduinoOTA.h>
 
 const char* ssid     = "alaynas iPhone";
 const char* password = "abcdefghij";
@@ -145,32 +146,19 @@ void handleSubmit() {
 }
 
 void setup() {
-  Serial.begin(115200);
-  delay(200);
-  Serial.println("\nBooting...");
+   Serial.begin(115200);
 
-  WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
 
-  Serial.print("Connecting to WiFi");
-  unsigned long start = millis();
   while (WiFi.status() != WL_CONNECTED) {
-    delay(300);              // ✅ prevents watchdog resets
+    delay(500);
     Serial.print(".");
-    if (millis() - start > 20000) {   // 20s timeout so it doesn't hang forever
-      Serial.println("\nWiFi failed. Rebooting...");
-      ESP.restart();
-    }
   }
 
-  Serial.println("\nConnected!");
-  Serial.print("ESP32 IP Address: ");
+  Serial.println("\nConnected");
   Serial.println(WiFi.localIP());
 
-  server.on("/", handleRoot);
-  server.on("/submit", handleSubmit);
-  server.begin();
-  Serial.println("Web server started!");
+  ArduinoOTA.begin();
 }
 
 void loop() {
