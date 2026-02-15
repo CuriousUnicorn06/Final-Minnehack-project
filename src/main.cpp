@@ -32,7 +32,7 @@ void handleRoot() {
 void setup() {
   Serial.begin(115200);
   delay(1000);
-
+  Serial.println("I'm alive");
   // ---- LED ----
   pinMode(LED_PIN, OUTPUT);
 
@@ -71,5 +71,6 @@ void loop() {
   if (digitalRead(BUTTON_PIN) == LOW) {  // Button pressed
     Serial.println("Button pressed!");
     delay(300); // Debounce
+
   }
 }
