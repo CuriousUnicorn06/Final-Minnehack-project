@@ -18,7 +18,7 @@ const char htmlPage[] PROGMEM = R"rawliteral(
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: ffe4ec;
+      background: #ffe4ec;
       color:#111;
       display:flex;
       min-height:100vh;
@@ -28,7 +28,7 @@ const char htmlPage[] PROGMEM = R"rawliteral(
     }
     .card{
       width: min(520px, 100%);
-      background:#fff;
+      background:#ffe4ec;
       border-radius:16px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       padding:22px;
@@ -84,7 +84,7 @@ const char htmlPage[] PROGMEM = R"rawliteral(
       font-size:15px;
       font-weight:700;
       cursor:pointer;
-      background:#111;
+      background:ffe4ec;
       color:#fff;
       margin-top:14px;
     }
