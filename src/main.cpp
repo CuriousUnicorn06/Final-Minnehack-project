@@ -2,7 +2,7 @@
 #include <WiFi.h>
 #include <WebServer.h>
 
-const char* ssid     = "alayna iPhone";
+const char* ssid     = "alaynas iPhone";
 const char* password = "abcdefghij";
 
 WebServer server(80);
