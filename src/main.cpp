@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WebServer.h>
-#include <ArduinoOTA.h>
+
 
 const char* ssid     = "alaynas iPhone";
 const char* password = "abcdefghij";
@@ -159,14 +159,11 @@ void setup() {
   Serial.println(WiFi.localIP());
   server.on("/", handleRoot);
   server.on("/submit", handleSubmit);
-   server.on("/check", []() {
-    server.send(200, "text/plain", "ESP32 is alive!");
-  });
-  ArduinoOTA.begin();
+  
 }
 
 void loop() {
   server.handleClient();
-  ArduinoOTA.handle();
+  
   delay(2); // ✅ tiny yield to keep system happy
 }
