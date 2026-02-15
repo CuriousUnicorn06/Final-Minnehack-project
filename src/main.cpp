@@ -163,5 +163,6 @@ void setup() {
 
 void loop() {
   server.handleClient();
+  ArduinoOTA.handle();
   delay(2); // ✅ tiny yield to keep system happy
 }
