@@ -2,7 +2,7 @@
 #include <WiFi.h>
 #include <WebServer.h>
 
-const char* ssid     = "alayna iPhone";
+const char* ssid     = "alaynas iPhone";
 const char* password = "abcdefghij";
 
 WebServer server(80);
@@ -12,20 +12,115 @@ const char htmlPage[] PROGMEM = R"rawliteral(
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>To-Do Competition</title>
+  <style>
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f6f7fb;
+      color:#111;
+      display:flex;
+      min-height:100vh;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+    .card{
+      width: min(520px, 100%);
+      background:#fff;
+      border-radius:16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding:22px;
+    }
+    h1{
+      margin:0 0 6px 0;
+      font-size:22px;
+    }
+    .sub{
+      margin:0 0 18px 0;
+      color:#555;
+      font-size:14px;
+    }
+    .row{
+      display:flex;
+      gap:10px;
+      margin: 10px 0 16px 0;
+    }
+    .pill{
+      flex:1;
+      border:1px solid #ddd;
+      border-radius:12px;
+      padding:12px 10px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      cursor:pointer;
+      user-select:none;
+    }
+    .pill input{ accent-color:#111; }
+    label span{ font-weight:600; }
+    textarea{
+      width:100%;
+      box-sizing:border-box;
+      border:1px solid #ddd;
+      border-radius:12px;
+      padding:12px;
+      font-size:14px;
+      line-height:1.4;
+      resize:vertical;
+      min-height:140px;
+      outline:none;
+    }
+    textarea:focus{
+      border-color:#111;
+      box-shadow:0 0 0 3px rgba(0,0,0,0.08);
+    }
+    .btn{
+      width:100%;
+      border:none;
+      border-radius:12px;
+      padding:12px 14px;
+      font-size:15px;
+      font-weight:700;
+      cursor:pointer;
+      background:#111;
+      color:#fff;
+      margin-top:14px;
+    }
+    .btn:active{ transform: translateY(1px); }
+    .hint{
+      margin-top:10px;
+      font-size:12px;
+      color:#666;
+    }
+  </style>
 </head>
+
 <body>
-  <h2>Pick a User</h2>
+  <div class="card">
+    <h1>To-Do Competition</h1>
+    <p class="sub">Pick a user, paste your list, hit save.</p>
 
-  <form action="/submit" method="GET">
-    <label><input type="radio" name="user" value="User1" required> User 1</label><br>
-    <label><input type="radio" name="user" value="User2"> User 2</label><br><br>
+    <form action="/submit" method="GET">
+      <div class="row">
+        <label class="pill">
+          <input type="radio" name="user" value="User1" required>
+          <span>User 1</span>
+        </label>
 
-    <h3>Enter To-Do List:</h3>
-    <textarea name="todo" rows="8" cols="32" placeholder="- Homework&#10;- Gym&#10;- Laundry"></textarea><br><br>
+        <label class="pill">
+          <input type="radio" name="user" value="User2">
+          <span>User 2</span>
+        </label>
+      </div>
 
-    <input type="submit" value="Save List">
-  </form>
+      <textarea name="todo" placeholder="- Homework&#10;- Gym&#10;- Laundry"></textarea>
+
+      <button class="btn" type="submit">Save List</button>
+      <div class="hint">Tip: each line becomes one task later.</div>
+    </form>
+  </div>
 </body>
 </html>
 )rawliteral";
