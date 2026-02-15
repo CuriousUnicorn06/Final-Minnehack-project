@@ -18,7 +18,7 @@ const char htmlPage[] PROGMEM = R"rawliteral(
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #f6f7fb;
+      background: #ffe4ec;
       color:#111;
       display:flex;
       min-height:100vh;
@@ -28,7 +28,7 @@ const char htmlPage[] PROGMEM = R"rawliteral(
     }
     .card{
       width: min(520px, 100%);
-      background:#fff;
+      background:#ffe4ec;
       border-radius:16px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       padding:22px;
@@ -84,7 +84,7 @@ const char htmlPage[] PROGMEM = R"rawliteral(
       font-size:15px;
       font-weight:700;
       cursor:pointer;
-      background:#111;
+      background:ffe4ec;
       color:#fff;
       margin-top:14px;
     }
@@ -115,7 +115,7 @@ const char htmlPage[] PROGMEM = R"rawliteral(
         </label>
       </div>
 
-      <textarea name="todo" placeholder="- Homework&#10;- Gym&#10;- Laundry"></textarea>
+      <textarea name="todo" placeholder="- example&#10"></textarea>
 
       <button class="btn" type="submit">Save List</button>
       <div class="hint">Tip: each line becomes one task later.</div>
