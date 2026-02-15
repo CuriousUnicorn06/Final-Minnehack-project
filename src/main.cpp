@@ -32,7 +32,7 @@ void handleRoot() {
 void setup() {
   Serial.begin(115200);
   delay(1000);
-  Serial.println("I'm alive");
+  Serial.println("this is new and works");
   // ---- LED ----
   pinMode(LED_PIN, OUTPUT);
 
