@@ -115,7 +115,7 @@ const char htmlPage[] PROGMEM = R"rawliteral(
         </label>
       </div>
 
-      <textarea name="todo" placeholder="- Homework&#10;- Gym&#10;- Laundry"></textarea>
+      <textarea name="todo" placeholder="- example&#10"></textarea>
 
       <button class="btn" type="submit">Save List</button>
       <div class="hint">Tip: each line becomes one task later.</div>
